@@ -2,7 +2,10 @@ import requests
 
 
 def test() -> None:
-    print("test")
+    url = "https://www.dirk.nl/boodschappen"
+    data = requests.get(url)
+    print(data)
+
 
 def main() -> None:
     test()
