@@ -4,7 +4,7 @@ import requests
 def test() -> None:
     url = "https://www.dirk.nl/boodschappen"
     data = requests.get(url)
-    print(data)
+    print(data.text)
 
 
 def main() -> None:
