@@ -4,6 +4,8 @@ import requests
 from typing import List
 from bs4 import BeautifulSoup
 
+from parser.exceptions import ConnectionError
+
 
 class JanlindersScraper:
 
