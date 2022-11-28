@@ -66,7 +66,7 @@ class VomarScraper:
             price = product.find('span', {'class': 'large'}).text +\
                 product.find('span', {'class': 'small'}).text
             old_price = product.find('img', {'class': 'discount'})
-            old_price = True if old_price else False
+            old_price = price
             product_data = {
                 'name': name,
                 'url': link,
