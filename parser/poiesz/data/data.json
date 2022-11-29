@@ -1,0 +1,308 @@
+[
+    {
+        "name": "aardappel-groente--fruit",
+        "subcategories": [
+            "aardappelen",
+            "champignons--paddenstoelen",
+            "fruit",
+            "groente",
+            "noten--gedroogd-fruit",
+            "verse-kruiden"
+        ]
+    },
+    {
+        "name": "verse-kant-en-klaarmaaltijden",
+        "subcategories": [
+            "hartige-taart--quiches",
+            "hollandse-maaltijden",
+            "italiaanse-maaltijden",
+            "maaltijdsalades",
+            "oosterse-maaltijden",
+            "pannenkoeken--poffertjes",
+            "snelle-snacks",
+            "verse-pasta",
+            "verse-pizza",
+            "verse-soep"
+        ]
+    },
+    {
+        "name": "vlees-kip-vis--vega",
+        "subcategories": [
+            "barbecue",
+            "burgers",
+            "culinair-convenience--gemaksproducten",
+            "fondue--gourmet",
+            "gehakt",
+            "kip",
+            "reepjes--blokjes",
+            "rundvlees",
+            "varkensvlees",
+            "vega--vleesvervangers",
+            "verse-sauzen",
+            "verse-worsten--rookworsten",
+            "vis",
+            "wild--poeliersspecialiteiten"
+        ]
+    },
+    {
+        "name": "kaas-vleeswaren-salades--tapas",
+        "subcategories": [
+            "broodsalades--toastsalades",
+            "buitenlandse-kaas",
+            "droge-worsten",
+            "kaas",
+            "maaltijdsalades--lunchsalades",
+            "spreads-dips--tapenades",
+            "tapas--olijven",
+            "vleeswaren"
+        ]
+    },
+    {
+        "name": "zuivel-eieren--boter",
+        "subcategories": [
+            "boter--margarine",
+            "chocolademelk",
+            "eieren",
+            "houdbare-zuivel",
+            "kwark",
+            "pappen",
+            "plantaardige-producten",
+            "slagroom--creme-fraiche",
+            "toetjes",
+            "verse-melk--karnemelk",
+            "vla",
+            "yoghurt",
+            "zuiveldranken--ontbijtdranken",
+            "zuiveltussendoor"
+        ]
+    },
+    {
+        "name": "brood--verse-koeken",
+        "subcategories": [
+            "bolletjes",
+            "brood--stokbrood",
+            "koek--cake",
+            "vers-afgebakken-broodjes--snacks",
+            "vruchtenbrood--suikerbrood",
+            "zelf-afbakbroodjes"
+        ]
+    },
+    {
+        "name": "gebak",
+        "subcategories": [
+            "vers-gebak",
+            "diepvries-gebak",
+            "fototaart"
+        ]
+    },
+    {
+        "name": "ontbijtgranen-beschuit-crackers--broodbeleg",
+        "subcategories": [
+            "beschuiten",
+            "crackers--rijstwafels",
+            "hartig-beleg",
+            "krokante-muesli--granola’s",
+            "roggebrood",
+            "zoet-broodbeleg"
+        ]
+    },
+    {
+        "name": "bakproducten--pudding",
+        "subcategories": [
+            "bakproducten",
+            "pudding"
+        ]
+    },
+    {
+        "name": "koffie-thee-koffiemelk--suiker",
+        "subcategories": [
+            "cacao--anijs",
+            "filters",
+            "koffie",
+            "koffiemelk-koffieroom--creamers",
+            "suiker--zoetstof",
+            "thee"
+        ]
+    },
+    {
+        "name": "bier",
+        "subcategories": [
+            "alcohol-vrij-bier",
+            "pilsener",
+            "radler",
+            "speciaalbier"
+        ]
+    },
+    {
+        "name": "wijn--aperitieven",
+        "subcategories": [
+            "alcoholvrij",
+            "gluhwein",
+            "mousserende-wijn",
+            "port-aperitieven--mixdrankjes",
+            "rode-wijn",
+            "rose",
+            "witte-wijn"
+        ]
+    },
+    {
+        "name": "frisdrank-sappen--water",
+        "subcategories": [
+            "drinkpakjes--drinkblikjes",
+            "energiedranken--sportdranken",
+            "frisdrank",
+            "siroop",
+            "verse-sappen--smoothies",
+            "vruchtensappen--vruchtendrank",
+            "water"
+        ]
+    },
+    {
+        "name": "chips-toastjes-zoutjes--noten",
+        "subcategories": [
+            "chips",
+            "dips",
+            "noten",
+            "popcorn",
+            "toastjes",
+            "zoutjes"
+        ]
+    },
+    {
+        "name": "snoep-drop--chocolade",
+        "subcategories": [
+            "chocolade",
+            "drop",
+            "kauwgum",
+            "mondverfrissers--keelpastilles",
+            "snoep"
+        ]
+    },
+    {
+        "name": "soepen-conserven-sauzen-smaakmakers-olie--zuren",
+        "subcategories": [
+            "augurken--zuren",
+            "azijn",
+            "fruitconserven",
+            "groente-conserven",
+            "kruiden--specerijen",
+            "olie--frituurvetten",
+            "rookworsten",
+            "sauzen--dressing",
+            "soepen",
+            "tomatenpuree--gepelde-gezeefde-tomaten",
+            "visconserven",
+            "vleesconserven"
+        ]
+    },
+    {
+        "name": "pasta-rijst--internationale-keuken",
+        "subcategories": [
+            "couscous-bulgur-quinoa--gort",
+            "maaltijdpakketten-en-maaltijdmixen",
+            "mediterrane-keuken",
+            "mexicaanse-keuken",
+            "noedels",
+            "oosterse-keuken",
+            "pasta",
+            "pasta-maaltijdsaus",
+            "rijst"
+        ]
+    },
+    {
+        "name": "bewuste-voeding",
+        "subcategories": [
+            "afslank-dieet",
+            "biologisch",
+            "glutenvrij",
+            "koolhydraatarm",
+            "lactose-en-glutenvrij",
+            "lactosevrij",
+            "natriumarm",
+            "puursap",
+            "sportvoeding",
+            "suikerbewust"
+        ]
+    },
+    {
+        "name": "diepvries",
+        "subcategories": [
+            "diepvries-aardappel-producten",
+            "diepvries-fruit",
+            "diepvries-gebak-brood--bladerdeeg",
+            "diepvries-groente",
+            "diepvries-maaltijden",
+            "diepvries-pizza",
+            "diepvries-snacks",
+            "diepvries-vlees--vis",
+            "ijs"
+        ]
+    },
+    {
+        "name": "baby",
+        "subcategories": [
+            "babyverzorging",
+            "babyvoeding",
+            "luiers--doekjes"
+        ]
+    },
+    {
+        "name": "drogisterij--cosmetica",
+        "subcategories": [
+            "bad-douche--zeep",
+            "dameshygiene",
+            "deodorant--geuren",
+            "ehbo",
+            "haarstyling",
+            "haarverzorging",
+            "huidverzorging",
+            "mondverzorging",
+            "scheerbenodigdheden"
+        ]
+    },
+    {
+        "name": "huishouden--non-food",
+        "subcategories": [
+            "batterijen",
+            "disposables",
+            "folie-huishoudpapier--huishoudzakjes",
+            "haardhout",
+            "hg",
+            "kaarsen",
+            "kantoorartikelen",
+            "keukenhulpjes",
+            "keukenpapier",
+            "lampen",
+            "lucifers-aanstekers--brandbare-stoffen",
+            "ongedierte-bestrijding",
+            "plantverzorging--potgrond",
+            "schoonmaakmiddelen",
+            "tabak--toebehoren",
+            "toiletpapier",
+            "toiletreinigers--verfrissers",
+            "vaatwas--afwasmiddel",
+            "vuilniszakken--pedaalemmerzakken",
+            "wasmiddelen--wasverzachters",
+            "zakdoekjes--tissues"
+        ]
+    },
+    {
+        "name": "dierenvoeding--dierenbenodigdheden",
+        "subcategories": [
+            "hond",
+            "kat",
+            "knaagdier",
+            "vogel"
+        ]
+    },
+    {
+        "name": "feestdagen",
+        "subcategories": [
+            "chocolade",
+            "koek",
+            "kruid--en-pepernoten",
+            "overige-lekkers",
+            "snoep--chocolade"
+        ]
+    }
+]
