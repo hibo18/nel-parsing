@@ -59,25 +59,35 @@ class VomarScraper:
         products = products_container.find_all('div', {'class': 'product'})
 
         def wrapper_product_handler(product: BeautifulSoup) -> dict:
-            name = product.find('p', {'class': 'description'}).text
-            logging.info(f"Product {name} parsing...")
-            link = self.MAIN_URL + product.find('a')['href']
-            link_image = product.find('img')['src']
-            price = product.find('span', {'class': 'large'}).text +\
-                product.find('span', {'class': 'small'}).text
-            old_price = product.find('img', {'class': 'discount'})
-            old_price = price
-            product_data = {
-                'name': name,
-                'url': link,
-                'img_url': link_image,
-                'price': price,
-                'old_price': old_price
-            }
-            return product_data
+            try:
+                name = product.find('p', {'class': 'description'}).text
+                logging.info(f"Product {name} parsing...")
+                link = self.MAIN_URL + product.find('a')['href']
+                link_image = product.find('img')['src']
+                price = product.find('span', {'class': 'large'}).text +\
+                    product.find('span', {'class': 'small'}).text
+                old_price = product.find('img', {'class': 'discount'})
+                old_price = price
+                sale = product.find('img', {'class': 'discount'})
+                sale = 'discount' if sale else "no discount"
+                product_data = {
+                    'name': name,
+                    'url': link,
+                    'img_url': link_image,
+                    'price': price,
+                    'old_price': old_price,
+                    'sale': sale
+                }
+                return product_data
+            except Exception:
+                return {}
         products_data = list(map(
             wrapper_product_handler,
             products
+        ))
+        products_data = list(filter(
+            lambda x: len(x) != 0,
+            products_data
         ))
         return products_data
 

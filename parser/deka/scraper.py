@@ -32,42 +32,49 @@ class DekaScraper:
         soup = BeautifulSoup(response.text, 'html.parser')
         products = soup.find_all('article', 'deka-product-card')
         def wrapper_product_handler(product: BeautifulSoup) -> dict:
-            name = product.find('h3', {
-                'class': 'deka-product-card--info--title product-card-title-1'
-            }).text
-            logging.info(f'Parsing {name} product...')
-            url = self.MAIN_URL + product.find(
-                'a',
-                {'class': 'deka-product-card--image'}
-            )['href']
-            img_url = product.find('img')['src']
-            euros = product.find(
-                'span',
-                {'class': 'price--before-decimal--offer price-1'}).text
-            cents = product.find(
-                'span',
-                {'class': 'price--after-decimal--offer price-2'}).text
-            price = euros + cents
-            euros = product.find(
-                'span',
-                {'class': 'price--before-decimal--regular price-2'})
-            cents = product.find(
-                'span',
-                {'class': 'price--after-decimal--regular price-2'})
-            if euros and cents:
-                old_price = euros.text + cents.text
-            else:
-                old_price = price
-            product_data = {
-                'name': name,
-                'url': url,
-                'img_url': img_url,
-                'price': price,
-                'old_price': old_price
-            }
+            try:
+                name = product.find('h3', {
+                    'class': 'deka-product-card--info--title product-card-title-1'
+                }).text
+                logging.info(f'Parsing {name} product...')
+                url = self.MAIN_URL + product.find(
+                    'a',
+                    {'class': 'deka-product-card--image'}
+                )['href']
+                img_url = product.find('img')['src']
+                euros = product.find(
+                    'span',
+                    {'class': 'price--before-decimal--offer price-1'}).text
+                cents = product.find(
+                    'span',
+                    {'class': 'price--after-decimal--offer price-2'}).text
+                price = euros + cents
+                euros = product.find(
+                    'span',
+                    {'class': 'price--before-decimal--regular price-2'})
+                cents = product.find(
+                    'span',
+                    {'class': 'price--after-decimal--regular price-2'})
+                if euros and cents:
+                    old_price = euros.text + cents.text
+                else:
+                    old_price = price
+                product_data = {
+                    'name': name,
+                    'url': url,
+                    'img_url': img_url,
+                    'price': price,
+                    'old_price': old_price
+                }
+            except Exception:
+                return {}
             return product_data
         products = list(map(
             wrapper_product_handler,
+            products
+        ))
+        products = list(filter(
+            lambda x: len(x) != 0,
             products
         ))
         return products

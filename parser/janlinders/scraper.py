@@ -78,6 +78,43 @@ class JanlindersScraper:
         ))
         return categories_data
 
+    def get_discounts(self):
+        url = 'https://www.janlinders.nl/aanbiedingen/~/week/this.html'
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        products = soup.find_all('div', {'class': 'offer_container'})
+        def wrapper_offers_handler(product: BeautifulSoup) -> dict:
+            try:
+                name = product.find('h3', {'class': 'item_header'})
+                link = name.find('a')['href']
+                name = name.find('a').text
+                img_link = product.find('img', {'class': 'error'})['src']
+                price = product.find('span', {'class': 'teaser'}).find('span', {'class': 'strikethrough'})
+                price = price.text if price else ""
+                old_price = price
+                sale = product.find('div', {'class': 'labels'}).text
+                product_data = {
+                        'name': name,
+                        'url': self.MAIN_URL + link,
+                        'img_url': self.MAIN_URL + img_link,
+                        'price': price,
+                        'old_price': old_price,
+                        'sale': sale.strip()
+                    }
+                return product_data
+            except Exception:
+                return {}
+
+        products_data = list(map(
+            wrapper_offers_handler,
+            products
+        ))
+        products_data = list(filter(
+            lambda x: len(x) != 0,
+            products_data
+        ))
+        return products_data
+
     def collect_products(self, subcategory_url: str) -> List[dict]:
         response = requests.get(subcategory_url)
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -86,27 +123,34 @@ class JanlindersScraper:
             'div', {'class': 'item_container'})
 
         def wrapper_product_handler(product: BeautifulSoup) -> dict:
-            name = product.find('span', {'class': 'teaser'}).text
-            name += product.find('h3', {'class': 'item_header'}).find('a').text
-            link = product.find(
-                'h3', {'class': 'item_header'}).find('a')['href']
-            link_image = product.find(
-                'div', {'class': 'item_imgcontainer'}).find('img')['src']
-            price = product.find('div', {'class': 'pricebox'}).find(
-                'span', {'class': 'price'})
-            price = price.contents[0] + '.' + price.contents[1].text
-            old_price = False
-            product_data = {
-                'name': name,
-                'url': self.MAIN_URL + '/' + link,
-                'img_url': link_image,
-                'price': price,
-                'old_price': old_price
-            }
+            try:
+                name = product.find('span', {'class': 'teaser'}).text
+                name += product.find('h3', {'class': 'item_header'}).find('a').text
+                link = product.find(
+                    'h3', {'class': 'item_header'}).find('a')['href']
+                link_image = product.find(
+                    'div', {'class': 'item_imgcontainer'}).find('img')['src']
+                price = product.find('div', {'class': 'pricebox'}).find(
+                    'span', {'class': 'price'})
+                price = price.contents[0] + '.' + price.contents[1].text
+                old_price = False
+                product_data = {
+                    'name': name,
+                    'url': self.MAIN_URL + '/' + link,
+                    'img_url': link_image,
+                    'price': price,
+                    'old_price': old_price
+                }
+            except Exception:
+                return {}
             return product_data
         products_data = list(map(
             wrapper_product_handler,
             products
+        ))
+        products_data = list(filter(
+            lambda x: len(x) != 0,
+            products_data
         ))
         return products_data
 

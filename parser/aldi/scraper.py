@@ -103,7 +103,7 @@ class AldiScraper:
             wrapper_product_handler,
             products
         ))
-        product_data = list(filter(
+        products_data = list(filter(
             lambda x: len(x) != 0,
             products_data
         ))
