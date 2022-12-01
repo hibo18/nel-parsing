@@ -27,7 +27,7 @@ class DekaScraper:
             return True
         return False
     
-    def get_dicounts(self) -> List[dict]:
+    def get_discounts(self) -> List[dict]:
         response = requests.get(self.MAIN_CATALOG)
         soup = BeautifulSoup(response.text, 'html.parser')
         products = soup.find_all('article', 'deka-product-card')

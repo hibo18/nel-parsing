@@ -130,15 +130,12 @@ class AldiScraper:
                 category_url = category['link']
                 subcategories = self.get_categories(category_url)
             except Exception:
-                logging.warning(
-                    f"Category {category['name']} has no subcategory!")
                 try:
                     category_products = self.collect_products(
                         category_url)
                     products += category_products
                 except AttributeError:
-                    logging.warning(
-                        f"Subcategory {category['name']} has no products")
+                    pass
                 except Exception as e:
                     continue
             for subcategory in subcategories:
@@ -155,8 +152,7 @@ class AldiScraper:
                         subcategory_url)
                     products += subcategory_products
                 except AttributeError:
-                    logging.warning(
-                        f"Subcategory {subcategory['name']} has no products")
+                    pass
                 except Exception as e:
                     pass
         return products

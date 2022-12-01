@@ -1,13 +1,28 @@
 import logging
-import json
-from parser.jumbo.scraper import JumboScraper
+
+import config
+
+from parser.handler import ParserHandler
 
 
-logging.basicConfig(level=logging.INFO, format="[%(asctime)s] | %(levelname)s - %(message)s")
+# Change level to 'logging.WARNING' if you don't wan't see logs 
+logging_level = logging.INFO
 
 
 def main() -> None:
-    pass
+
+    # Initial handler
+    handler = ParserHandler(
+        path_webdriver=config.webdrive_path,
+        ignore_scrapers=config.ignore_scrapers,
+        logging_level=logging_level
+    )
+
+    # Get all products...
+    products = handler.get_products()
+
+    # Save all products...
+    handler.save_csv(config.csv_path, products)
 
 
 if __name__ == "__main__":

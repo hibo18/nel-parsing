@@ -111,9 +111,7 @@ class CoopScraper:
                 logging.info(f"Handling {category['name']} category...")
                 category_url = category['link']
                 subcategories = self.get_categories(category_url)
-            except AttributeError:
-                logging.warning(
-                    f"Category {category['name']} has no subcategory!")
+            except Exception:
                 continue
             for subcategory in subcategories:
                 if subcategory['name'] != to_subcategory and to_subcategory:
@@ -128,8 +126,7 @@ class CoopScraper:
                     subcategory_products = self.collect_products(
                         subcategory_url)
                     products += subcategory_products
-                except AttributeError:
-                    logging.warning(
-                        f"Subcategory {subcategory['name']} has no products")
+                except Exception:
+                    pass
         return products
     

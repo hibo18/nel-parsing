@@ -153,8 +153,6 @@ class DirkScraper:
                 category_url = category['link']
                 subcategories = self.get_categories(category_url)
             except AttributeError:
-                logging.warning(
-                    f"Category {category['name']} has no subcategory!")
                 continue
 
             for subcategory in subcategories:
@@ -177,6 +175,5 @@ class DirkScraper:
                     ))
                     products += products_subcategory
                 except AttributeError:
-                    logging.warning(
-                        f"Subcategory {subcategory['name']} has no products")
+                    pass
         return products

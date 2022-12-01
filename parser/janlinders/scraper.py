@@ -160,7 +160,14 @@ class JanlindersScraper:
         end_pagination = soup.find(
             'div',
             'pagination block'
-        ).find('a', {'class': 'last'})['title']
+        )
+        try:
+            end_pagination = end_pagination.find('a', {'class': 'last'})['title']
+        except Exception:
+            try:
+                end_pagination = end_pagination.find_all('a', {'class': 'link'})[-1]['title']
+            except Exception:
+                return 1
         return int(end_pagination.split(" ")[-1])
 
     def get_products(
@@ -185,8 +192,7 @@ class JanlindersScraper:
                 category_url = category['link']
                 subcategories = self.get_categories(category_url, is_sub=True)
             except AttributeError:
-                logging.warning(
-                    f"Category {category['name']} has no subcategory!")
+                pass
                 continue
 
             for subcategory in subcategories:
@@ -210,7 +216,6 @@ class JanlindersScraper:
                             url)
                         products += subcategory_products
                 except AttributeError:
-                    logging.warning(
-                        f"Subcategory {subcategory['name']} has no products")
+                    pass
 
         return products
