@@ -3,7 +3,6 @@ from pathlib import Path
 
 ignore_scrapers = [
     'JumboScraper', 
-    'DirkScraper',
 ]
 
 """
